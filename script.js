@@ -14,8 +14,9 @@ const titleData = {
 
 let viewSettings = JSON.parse(localStorage.getItem('kana_view')) || {
     onlyBookmark: false, showKo: true, showRuby: true, playOnFlash: true, playOnClick: true, voiceSpeed: 1.0,
-    flashSpeed: 'normal', flashManual: false, compactView: false
+    flashSpeed: 'normal', flashManual: false, compactView: false, enableBookmark: true
 };
+if (viewSettings.enableBookmark === undefined) viewSettings.enableBookmark = true;
 let secSettings = JSON.parse(localStorage.getItem('kana_sec')) || { base: true, daku: true, yoon: true, soku: true, choo: true };
 let bookmarks = JSON.parse(localStorage.getItem('kana_bookmarks') || '{}');
 
@@ -413,7 +414,8 @@ function updateUI() {
         'theme-system': lang.theme_system, 'theme-light': lang.theme_light, 'theme-dark': lang.theme_dark,
         'menu-view': lang.menu_view, 'menu-voice': lang.menu_voice, 'menu-sec': lang.menu_sec,
         'menu-lang': lang.menu_lang, 'menu-data': lang.menu_data, 'menu-feedback': lang.menu_feedback,
-        'view-bookmark': lang.view_bookmark, 'view-ko': lang.view_ko, 'view-ruby': lang.view_ruby,
+        'menu-lang': lang.menu_lang, 'menu-data': lang.menu_data, 'menu-feedback': lang.menu_feedback,
+        'view-use-bm': lang.view_use_bm, 'view-bookmark': lang.view_bookmark, 'view-ko': lang.view_ko, 'view-ruby': lang.view_ruby,
         'view-compact': lang.view_compact,
         'voice-click': lang.voice_click, 'voice-flash': lang.voice_flash,
         'voice-click': lang.voice_click, 'voice-flash': lang.voice_flash,
@@ -458,6 +460,7 @@ function updateUI() {
 
     // 체크박스 상태 업데이트
     const checkMap = {
+        'chk-use-bm': viewSettings.enableBookmark,
         'chk-fav': viewSettings.onlyBookmark,
         'chk-ko': viewSettings.showKo,
         'chk-ruby': viewSettings.showRuby,
@@ -478,6 +481,13 @@ function updateUI() {
     for (let id in checkMap) {
         const el = document.getElementById(id);
         if (el) el.classList.toggle('checked', checkMap[id]);
+    }
+
+    // 북마크 사용 여부에 따른 클래스 토글
+    if (viewSettings.enableBookmark) {
+        document.body.classList.remove('hide-bookmarks');
+    } else {
+        document.body.classList.add('hide-bookmarks');
     }
 }
 
