@@ -18,6 +18,7 @@ const UI_LANG = {
         menu_feedback: "피드백 및 제안",
 
         // 보기 설정
+        view_use_bm: "북마크 사용",
         view_bookmark: "북마크만 보기",
         view_ko: "한글 발음 표시",
         view_ruby: "대응 문자 표시",
@@ -91,6 +92,7 @@ const UI_LANG = {
         menu_lang: "Change Language",
         menu_data: "Data Management",
         menu_feedback: "Feedback",
+        view_use_bm: "Enable Bookmarks",
         view_bookmark: "Bookmarks Only",
         view_ko: "Show Korean",
         view_ruby: "Corresponding Character",
@@ -151,6 +153,7 @@ const UI_LANG = {
         menu_lang: "言語変更",
         menu_data: "データ管理",
         menu_feedback: "フィードバック",
+        view_use_bm: "ブックマーク使用",
         view_bookmark: "ブックマークのみ",
         view_ko: "ハングル表示",
         view_ruby: "対応文字表示",
