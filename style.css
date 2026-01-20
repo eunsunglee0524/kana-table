@@ -645,3 +645,9 @@ body {
 body.lang-ko.show-pron .k-ko {
     display: block;
 }
+
+/* --- Hide Bookmarks Feature --- */
+body.hide-bookmarks .bookmark-status,
+body.hide-bookmarks .bm-icon {
+    display: none !important;
+}
