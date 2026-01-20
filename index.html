@@ -75,6 +75,11 @@
                 </div>
 
                 <div id="viewPop" class="ice-pop sub-pop">
+                    <div class="pop-row" onclick="toggleViewSetting(event, 'enableBookmark')">
+                        <i class="fa-solid fa-bookmark" style="color: var(--text-sub);"></i>
+                        <span id="view-use-bm">북마크 사용</span>
+                        <div class="custom-chk" id="chk-use-bm"><i class="fa-solid fa-check"></i></div>
+                    </div>
                     <div class="pop-row" onclick="toggleViewSetting(event, 'onlyBookmark')">
                         <i class="fa-solid fa-bookmark" style="color: var(--yellow);"></i>
                         <span id="view-bookmark">북마크만 보기</span>
